@@ -13,17 +13,24 @@ public class Snake_And_Ladder {
         //UC2
         // Roll the dice
         int diceRoll = (int) (Math.random() * 6) + 1;
-    // UC 3 starts
-        int options = (int)(Math.random()*3);
-        switch(options){
-            case noPlay :
-                break;
-            case ladder:
-                start += diceRoll;
-                break;
-            case snake:
-                start -= diceRoll;
-                break;
-        } //UC 3 ends
+        //UC 4 starts
+        do{
+            // UC 3 starts
+            int options = (int)(Math.random()*3);
+            switch(options){
+                case noPlay :
+                    break;
+                case ladder:
+                    start += diceRoll;
+                    break;
+                case snake:
+                    start -= diceRoll;
+                    if(start < 0){//UC4
+                        start = 0;
+                    }
+                    break;
+            }//UC 3 ends
+        }while(start<100);
+        //UC 4 ends
     }
 }

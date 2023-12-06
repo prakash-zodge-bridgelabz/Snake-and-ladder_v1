@@ -22,6 +22,9 @@ public class Snake_And_Ladder {
                     break;
                 case ladder:
                     start += diceRoll;
+                    if(start>100){
+                        start -=diceRoll;//UC5
+                    }
                     break;
                 case snake:
                     start -= diceRoll;

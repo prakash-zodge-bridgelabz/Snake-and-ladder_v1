@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import java.util.Random;
+
 public class Snake_And_Ladder {
     // Global variables
     public static final int noPlay = 0; //UC 3
@@ -8,15 +10,26 @@ public class Snake_And_Ladder {
     public static void main(String[] args) {
         System.out.println("Welcome to Snake and Ladder game");
         //Snake and Ladder game played with single player at start position 0
-        int start = 0; //UC 1
-
-        //UC2
-        // Roll the dice
-        int diceRoll = (int) (Math.random() * 6) + 1;
-
-        int c = 0;      // UC 6
+        int start1 = 0; //UC 1
+        int start2 = 0; //UC 7
+        int c1 = 0;      // UC 6
+        int c2 = 0;        //UC 7
+        c1 = whoWins(start1,c1);
+        c2 = whoWins(start2,c2);
+        System.out.println("throws taken by player1 :" + c1);
+        System.out.println("throws taken by player1 :" + c2);
+        if(c1>c2){
+            System.out.println("Player 2 wins");
+        }else{
+            System.out.println("Player 1 wins");
+        }
+    }
+    public static int whoWins(int start, int c){
         //UC 4 starts
         do{
+            //UC2
+            // Roll the dice
+            int diceRoll = (int) (Math.random() * 6) + 1;
             // UC 3 starts
             int options = (int)(Math.random()*3);
             switch(options){
@@ -36,9 +49,9 @@ public class Snake_And_Ladder {
                     break;
             }//UC 3 ends
             c++; //UC 6
-            System.out.println("dice :"+diceRoll+" position: "+ start);//UC6
+
         }while(start<100);
         //UC 4 ends
-        System.out.println("Dice thrown: "+c);  //UC 6
+        return c;
     }
 }

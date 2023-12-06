@@ -13,6 +13,8 @@ public class Snake_And_Ladder {
         //UC2
         // Roll the dice
         int diceRoll = (int) (Math.random() * 6) + 1;
+
+        int c = 0;      // UC 6
         //UC 4 starts
         do{
             // UC 3 starts
@@ -33,7 +35,10 @@ public class Snake_And_Ladder {
                     }
                     break;
             }//UC 3 ends
+            c++; //UC 6
+            System.out.println("dice :"+diceRoll+" position: "+ start);//UC6
         }while(start<100);
         //UC 4 ends
+        System.out.println("Dice thrown: "+c);  //UC 6
     }
 }
